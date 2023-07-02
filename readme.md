@@ -7,6 +7,3 @@
 2. Push hasil test ini di github mu
 
 *poin penilaian dilihat dari proses pengerjaan nya bukan benar atau salahnya
-
-
-# Back-End-WebSocket

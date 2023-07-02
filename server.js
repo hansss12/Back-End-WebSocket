@@ -4,12 +4,13 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
+const router = require("./app/routes/exampleRoutes")
 
 const corsOptions = {
   origin: ["http://localhost:8080"],
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -30,12 +31,9 @@ db.sequelize.sync();
 // });
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Hello" });
-});
+app.use(router);
 
 // routes
-// require("./app/routes/exaole.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 7878;
